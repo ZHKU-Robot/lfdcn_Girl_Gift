@@ -1,0 +1,367 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 2 2
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L Device:LED_RGB D?
+U 1 1 5FBF2160
+P 2425 2485
+AR Path="/5FBF2160" Ref="D?"  Part="1" 
+AR Path="/5FBE0783/5FBF2160" Ref="D?"  Part="1" 
+F 0 "D?" H 2425 2982 50  0000 C CNN
+F 1 "LED_RGB" H 2425 2891 50  0000 C CNN
+F 2 "" H 2425 2435 50  0001 C CNN
+F 3 "~" H 2425 2435 50  0001 C CNN
+	1    2425 2485
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:LED_RGB D?
+U 1 1 5FBF232A
+P 2420 3445
+AR Path="/5FBF232A" Ref="D?"  Part="1" 
+AR Path="/5FBE0783/5FBF232A" Ref="D?"  Part="1" 
+F 0 "D?" H 2420 3942 50  0000 C CNN
+F 1 "LED_RGB" H 2420 3851 50  0000 C CNN
+F 2 "" H 2420 3395 50  0001 C CNN
+F 3 "~" H 2420 3395 50  0001 C CNN
+	1    2420 3445
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:LED_RGB D?
+U 1 1 5FBF312D
+P 2420 4390
+AR Path="/5FBF312D" Ref="D?"  Part="1" 
+AR Path="/5FBE0783/5FBF312D" Ref="D?"  Part="1" 
+F 0 "D?" H 2420 4887 50  0000 C CNN
+F 1 "LED_RGB" H 2420 4796 50  0000 C CNN
+F 2 "" H 2420 4340 50  0001 C CNN
+F 3 "~" H 2420 4340 50  0001 C CNN
+	1    2420 4390
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:LED_RGB D?
+U 1 1 5FBF3D49
+P 2420 5285
+AR Path="/5FBF3D49" Ref="D?"  Part="1" 
+AR Path="/5FBE0783/5FBF3D49" Ref="D?"  Part="1" 
+F 0 "D?" H 2420 5782 50  0000 C CNN
+F 1 "LED_RGB" H 2420 5691 50  0000 C CNN
+F 2 "" H 2420 5235 50  0001 C CNN
+F 3 "~" H 2420 5235 50  0001 C CNN
+	1    2420 5285
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:LED_RGB D?
+U 1 1 5FBF4686
+P 5020 5290
+AR Path="/5FBF4686" Ref="D?"  Part="1" 
+AR Path="/5FBE0783/5FBF4686" Ref="D?"  Part="1" 
+F 0 "D?" H 5020 5787 50  0000 C CNN
+F 1 "LED_RGB" H 5020 5696 50  0000 C CNN
+F 2 "" H 5020 5240 50  0001 C CNN
+F 3 "~" H 5020 5240 50  0001 C CNN
+	1    5020 5290
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:LED_RGB D?
+U 1 1 5FBF529C
+P 3710 2485
+AR Path="/5FBF529C" Ref="D?"  Part="1" 
+AR Path="/5FBE0783/5FBF529C" Ref="D?"  Part="1" 
+F 0 "D?" H 3710 2982 50  0000 C CNN
+F 1 "LED_RGB" H 3710 2891 50  0000 C CNN
+F 2 "" H 3710 2435 50  0001 C CNN
+F 3 "~" H 3710 2435 50  0001 C CNN
+	1    3710 2485
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:LED_RGB D?
+U 1 1 5FBF5FE7
+P 3710 3450
+AR Path="/5FBF5FE7" Ref="D?"  Part="1" 
+AR Path="/5FBE0783/5FBF5FE7" Ref="D?"  Part="1" 
+F 0 "D?" H 3710 3947 50  0000 C CNN
+F 1 "LED_RGB" H 3710 3856 50  0000 C CNN
+F 2 "" H 3710 3400 50  0001 C CNN
+F 3 "~" H 3710 3400 50  0001 C CNN
+	1    3710 3450
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:LED_RGB D?
+U 1 1 5FBF6BD4
+P 3710 4390
+AR Path="/5FBF6BD4" Ref="D?"  Part="1" 
+AR Path="/5FBE0783/5FBF6BD4" Ref="D?"  Part="1" 
+F 0 "D?" H 3710 4887 50  0000 C CNN
+F 1 "LED_RGB" H 3710 4796 50  0000 C CNN
+F 2 "" H 3710 4340 50  0001 C CNN
+F 3 "~" H 3710 4340 50  0001 C CNN
+	1    3710 4390
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:LED_RGB D?
+U 1 1 5FBF78AD
+P 3710 5285
+AR Path="/5FBF78AD" Ref="D?"  Part="1" 
+AR Path="/5FBE0783/5FBF78AD" Ref="D?"  Part="1" 
+F 0 "D?" H 3710 5782 50  0000 C CNN
+F 1 "LED_RGB" H 3710 5691 50  0000 C CNN
+F 2 "" H 3710 5235 50  0001 C CNN
+F 3 "~" H 3710 5235 50  0001 C CNN
+	1    3710 5285
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:LED_RGB D?
+U 1 1 5FBF8526
+P 5020 2490
+AR Path="/5FBF8526" Ref="D?"  Part="1" 
+AR Path="/5FBE0783/5FBF8526" Ref="D?"  Part="1" 
+F 0 "D?" H 5020 2987 50  0000 C CNN
+F 1 "LED_RGB" H 5020 2896 50  0000 C CNN
+F 2 "" H 5020 2440 50  0001 C CNN
+F 3 "~" H 5020 2440 50  0001 C CNN
+	1    5020 2490
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:LED_RGB D?
+U 1 1 5FBF9327
+P 5020 3455
+AR Path="/5FBF9327" Ref="D?"  Part="1" 
+AR Path="/5FBE0783/5FBF9327" Ref="D?"  Part="1" 
+F 0 "D?" H 5020 3952 50  0000 C CNN
+F 1 "LED_RGB" H 5020 3861 50  0000 C CNN
+F 2 "" H 5020 3405 50  0001 C CNN
+F 3 "~" H 5020 3405 50  0001 C CNN
+	1    5020 3455
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:LED_RGB D?
+U 1 1 5FBFAEB4
+P 5020 4395
+AR Path="/5FBFAEB4" Ref="D?"  Part="1" 
+AR Path="/5FBE0783/5FBFAEB4" Ref="D?"  Part="1" 
+F 0 "D?" H 5020 4892 50  0000 C CNN
+F 1 "LED_RGB" H 5020 4801 50  0000 C CNN
+F 2 "" H 5020 4345 50  0001 C CNN
+F 3 "~" H 5020 4345 50  0001 C CNN
+	1    5020 4395
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2225 2285 1975 2285
+Wire Wire Line
+	1975 2285 1975 2485
+Wire Wire Line
+	3510 2285 3265 2285
+Wire Wire Line
+	4575 2290 4575 2490
+Wire Wire Line
+	2225 2485 1975 2485
+Connection ~ 1975 2485
+Wire Wire Line
+	2225 2685 1975 2685
+Wire Wire Line
+	2220 3445 1975 3445
+Wire Wire Line
+	2220 3645 1975 3645
+Wire Wire Line
+	1975 2485 1975 2685
+Wire Wire Line
+	2220 3245 1975 3245
+Connection ~ 1975 3245
+Wire Wire Line
+	1975 3245 1975 3445
+Connection ~ 1975 2685
+Wire Wire Line
+	1975 2685 1975 3245
+Connection ~ 1975 3445
+Wire Wire Line
+	1975 3445 1975 3645
+Connection ~ 1975 3645
+Wire Wire Line
+	1975 3645 1975 4190
+Wire Wire Line
+	2220 4390 1975 4390
+Wire Wire Line
+	2220 4590 1975 4590
+Wire Wire Line
+	2220 4190 1975 4190
+Connection ~ 1975 4190
+Wire Wire Line
+	1975 4190 1975 4390
+Connection ~ 1975 4390
+Wire Wire Line
+	1975 4390 1975 4590
+Connection ~ 1975 4590
+Wire Wire Line
+	1975 4590 1975 5085
+Wire Wire Line
+	2220 5285 1975 5285
+Wire Wire Line
+	2220 5485 1975 5485
+Wire Wire Line
+	2220 5085 1975 5085
+Connection ~ 1975 5085
+Wire Wire Line
+	1975 5085 1975 5285
+Connection ~ 1975 5285
+Wire Wire Line
+	1975 5285 1975 5485
+Connection ~ 1975 5485
+Wire Wire Line
+	1975 5485 1975 6135
+Wire Wire Line
+	3510 2685 3265 2685
+Wire Wire Line
+	3510 2485 3265 2485
+Wire Wire Line
+	1975 6135 3265 6135
+Wire Wire Line
+	3265 2285 3265 2485
+Connection ~ 3265 6135
+Connection ~ 3265 2485
+Wire Wire Line
+	3265 2485 3265 2685
+Connection ~ 3265 2685
+Wire Wire Line
+	3265 2685 3265 3250
+Wire Wire Line
+	3510 3450 3265 3450
+Wire Wire Line
+	3510 3650 3265 3650
+Wire Wire Line
+	3510 3250 3265 3250
+Wire Wire Line
+	3510 4390 3265 4390
+Wire Wire Line
+	3510 4590 3265 4590
+Wire Wire Line
+	3510 4190 3265 4190
+Wire Wire Line
+	3510 5285 3265 5285
+Wire Wire Line
+	3510 5485 3265 5485
+Wire Wire Line
+	3510 5085 3265 5085
+Connection ~ 3265 5485
+Wire Wire Line
+	3265 5485 3265 6135
+Connection ~ 3265 5285
+Wire Wire Line
+	3265 5285 3265 5485
+Connection ~ 3265 5085
+Wire Wire Line
+	3265 5085 3265 5285
+Connection ~ 3265 4190
+Wire Wire Line
+	3265 4190 3265 4390
+Connection ~ 3265 4390
+Wire Wire Line
+	3265 4390 3265 4590
+Connection ~ 3265 4590
+Wire Wire Line
+	3265 4590 3265 5085
+Connection ~ 3265 3250
+Wire Wire Line
+	3265 3250 3265 3450
+Connection ~ 3265 3450
+Wire Wire Line
+	3265 3450 3265 3650
+Connection ~ 3265 3650
+Wire Wire Line
+	3265 3650 3265 4190
+Wire Wire Line
+	4820 2690 4575 2690
+Wire Wire Line
+	4820 2490 4575 2490
+Connection ~ 4575 2490
+Wire Wire Line
+	4575 2490 4575 2690
+Connection ~ 4575 2690
+Wire Wire Line
+	4575 2690 4575 3255
+Wire Wire Line
+	4575 2290 4820 2290
+Wire Wire Line
+	4820 3455 4575 3455
+Wire Wire Line
+	4820 3655 4575 3655
+Wire Wire Line
+	4820 3255 4575 3255
+Wire Wire Line
+	4820 4395 4575 4395
+Wire Wire Line
+	4820 4595 4575 4595
+Wire Wire Line
+	4820 4195 4575 4195
+Wire Wire Line
+	4820 5290 4575 5290
+Wire Wire Line
+	4820 5490 4575 5490
+Wire Wire Line
+	4820 5090 4575 5090
+Connection ~ 4575 5090
+Wire Wire Line
+	4575 5090 4575 5290
+Connection ~ 4575 5290
+Wire Wire Line
+	4575 5290 4575 5490
+Connection ~ 4575 5490
+Wire Wire Line
+	4575 5490 4575 6135
+Connection ~ 4575 4195
+Wire Wire Line
+	4575 4195 4575 4395
+Connection ~ 4575 4395
+Wire Wire Line
+	4575 4395 4575 4595
+Connection ~ 4575 4595
+Wire Wire Line
+	4575 4595 4575 5090
+Connection ~ 4575 3255
+Wire Wire Line
+	4575 3255 4575 3455
+Connection ~ 4575 3455
+Wire Wire Line
+	4575 3455 4575 3655
+Connection ~ 4575 3655
+Wire Wire Line
+	4575 3655 4575 4195
+Wire Wire Line
+	3265 6135 4575 6135
+$Comp
+L power:GND #PWR?
+U 1 1 5FD2D38E
+P 3265 6340
+F 0 "#PWR?" H 3265 6090 50  0001 C CNN
+F 1 "GND" H 3270 6167 50  0000 C CNN
+F 2 "" H 3265 6340 50  0001 C CNN
+F 3 "" H 3265 6340 50  0001 C CNN
+	1    3265 6340
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3265 6135 3265 6340
+$EndSCHEMATC
