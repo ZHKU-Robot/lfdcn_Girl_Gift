@@ -11,6 +11,7 @@
 
 - 2020年11月18日23:39:10 yjc update 开场动画
 - 2020年11月23日01:49:50 lfdcn update 原理图
+- 2020年11月25日21:57:00 lfdcn update PCB&&Gerber
 
 ## 示例
 
@@ -19,3 +20,12 @@
 ### 原理图
 
 ![image-20201123015911141](https://raw.githubusercontent.com/lfdcn/Image/master/Typoraimage-20201123015911141.png)
+
+### PCB
+
+![image-20201125215837456](https://raw.githubusercontent.com/lfdcn/Image/master/Typoraimage-20201125215837456.png)
+
+### 3D效果图
+
+![image-20201125215858307](https://raw.githubusercontent.com/lfdcn/Image/master/Typoraimage-20201125215858307.png)
+
