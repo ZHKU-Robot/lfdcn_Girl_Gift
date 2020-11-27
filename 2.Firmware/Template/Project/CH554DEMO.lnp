@@ -1,0 +1,5 @@
+"main.obj",
+".\Debug.obj",
+".\GPIO.obj" 
+TO "CH554DEMO" 
+RAMSIZE(256) 
