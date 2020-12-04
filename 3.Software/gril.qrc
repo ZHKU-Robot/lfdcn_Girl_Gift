@@ -1,6 +1,12 @@
 <RCC>
-  <qresource prefix="q">
-    <file>birthday_girl_128px_1292266_easyicon.net.ico</file>
-
+  <qresource prefix="girl">
+    <file>video/ISP_Hero_Video-275688475~1.mp4</file>
+    <file>video/Radio-Digital-Scheme-Live-Wallpaper~1.mp4</file>
+    <file>img/preview.jpg</file>
+    <file>img/birthday_girl_128px_1292266_easyicon.net.ico</file>
+    <file>img/CPU.svg</file>
+    <file>img/jhk-1606994905854.jpg</file>
+    <file>img/preload.png</file>
+    <file>img/showheart.gif</file>
   </qresource>
 </RCC>

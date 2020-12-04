@@ -1,0 +1,10 @@
+<RCC>
+  <qresource prefix="girl">
+    <file>img/preview.jpg</file>
+    <file>img/birthday_girl_128px_1292266_easyicon.net.ico</file>
+    <file>img/CPU.svg</file>
+    <file>img/jhk-1606994905854.jpg</file>
+    <file>img/preload.png</file>
+    <file>img/showheart.gif</file>
+  </qresource>
+</RCC>
