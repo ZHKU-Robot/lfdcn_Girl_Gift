@@ -1,10 +1,11 @@
-C51 COMPILER V9.60.0.0   DEBUG                                                             11/27/2020 11:00:03 PAGE 1   
+C51 COMPILER V9.60.0.0   DEBUG                                                             11/27/2020 11:16:59 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE DEBUG
 OBJECT MODULE PLACED IN .\Debug.obj
 COMPILER INVOKED BY: D:\keil4\C51\BIN\C51.EXE ..\Public\Debug.C LARGE OPTIMIZE(8,SPEED) BROWSE NOAREGS INCDIR(..\Public;
-                    -..\User\GPIO) DEBUG OBJECTEXTEND PRINT(.\Debug.lst) OBJECT(.\Debug.obj)
+                    -..\User\GPIO;..\User\PWM;..\User\Timer;..\User\ADC;..\User\Compare;..\User\DataFlash;..\User\IAP;..\User\SPI;..\User\Tou
+                    -chKey;..\User\USB\USB_LIB) DEBUG OBJECTEXTEND PRINT(.\Debug.lst) OBJECT(.\Debug.obj)
 
 line level    source
 
@@ -61,9 +62,9 @@ line level    source
                               CLOCK_CFG = CLOCK_CFG & ~ MASK_SYS_CK_SEL | 0x01;  // 750KHz
               #endif
   53   1      #if FREQ_SYS == 187500  
-                              CLOCK_CFG = CLOCK_CFG & ~ MASK_SYS_CK_SEL | 0x00;  // 187.5KHz  
-C51 COMPILER V9.60.0.0   DEBUG                                                             11/27/2020 11:00:03 PAGE 2   
+C51 COMPILER V9.60.0.0   DEBUG                                                             11/27/2020 11:16:59 PAGE 2   
 
+                              CLOCK_CFG = CLOCK_CFG & ~ MASK_SYS_CK_SEL | 0x00;  // 187.5KHz  
               #endif
   56   1                      SAFE_MOD = 0x00;
   57   1      }
@@ -125,9 +126,9 @@ line level    source
  113          {
  114   1              while ( n ) {
  115   2      #ifdef  DELAY_MS_HW
-                              while ( ( TKEY_CTRL & bTKC_IF ) == 0 );
-C51 COMPILER V9.60.0.0   DEBUG                                                             11/27/2020 11:00:03 PAGE 3   
+C51 COMPILER V9.60.0.0   DEBUG                                                             11/27/2020 11:16:59 PAGE 3   
 
+                              while ( ( TKEY_CTRL & bTKC_IF ) == 0 );
                               while ( TKEY_CTRL & bTKC_IF );
               #else
  119   2                      mDelayuS( 1000 );
@@ -189,9 +190,9 @@ line level    source
  171          * Function Name  : CH554UART0RcvByte()
  172          * Description    : CH554UART0接收一个字节
  173          * Input          : None
- 174          * Output         : None
-C51 COMPILER V9.60.0.0   DEBUG                                                             11/27/2020 11:00:03 PAGE 4   
+C51 COMPILER V9.60.0.0   DEBUG                                                             11/27/2020 11:16:59 PAGE 4   
 
+ 174          * Output         : None
  175          * Return         : SBUF
  176          *******************************************************************************/
  177          UINT8  CH554UART0RcvByte( )
@@ -253,9 +254,9 @@ line level    source
  232          
  233          // /*******************************************************************************
  234          // * Function Name  : CH554SoftReset()
- 235          // * Description    : CH554软复位
-C51 COMPILER V9.60.0.0   DEBUG                                                             11/27/2020 11:00:03 PAGE 5   
+C51 COMPILER V9.60.0.0   DEBUG                                                             11/27/2020 11:16:59 PAGE 5   
 
+ 235          // * Description    : CH554软复位
  236          // * Input          : None
  237          // * Output         : None
  238          // * Return         : None

@@ -1,0 +1,225 @@
+C51 COMPILER V9.60.0.0   DEBUG                                                             12/06/2020 14:28:35 PAGE 1   
+
+
+C51 COMPILER V9.60.0.0, COMPILATION OF MODULE DEBUG
+OBJECT MODULE PLACED IN .\Debug.obj
+COMPILER INVOKED BY: D:\keil4\C51\BIN\C51.EXE ..\Public\Debug.C LARGE OPTIMIZE(8,SPEED) BROWSE NOAREGS INCDIR(..\Public;
+                    -..\User\GPIO;..\User\PWM;..\User\Timer;..\User\ADC;..\User\Compare;..\User\DataFlash;..\User\IAP;..\User\SPI;..\User\Tou
+                    -chKey;..\User\USB\USB_LIB;..\User\IIC;..\User\UART;..\User\Timer;..\User\RZ) DEBUG OBJECTEXTEND PRINT(.\Debug.lst) OBJEC
+                    -T(.\Debug.obj)
+
+line level    source
+
+   1          /********************************** (C) COPYRIGHT *******************************
+   2          * File Name          : Debug.C
+   3          * Author             : lfdcn
+   4          * Version            : V1.2
+   5          * Date               : 2020/11/28
+   6          * Description        : CH552 DEBUG Interface
+   7                               CH552主频修改、延时函数定义
+   8                               串口0和串口1初始化
+   9                               串口0和串口1的收发子函数
+  10                               看门狗初始化                                                                                
+  11          *******************************************************************************/
+  12          
+  13          #include "Debug.H"
+  14          #include <CH552.H>
+  15          
+  16          
+  17          /*******************************************************************************
+  18          * Function Name  : CfgFsys( )
+  19          * Description    : CH552时钟选择和配置函数,默认使用Fsys 6MHz，FREQ_SYS可以通过
+  20                             CLOCK_CFG配置得到，公式如下：
+  21                             Fsys = (Fosc * 4/(CLOCK_CFG & MASK_SYS_CK_SEL);具体时钟需要自己配置 
+  22          * Input          : None
+  23          * Output         : None
+  24          * Return         : None
+  25          *******************************************************************************/ 
+  26          void    CfgFsys( )  
+  27          {
+  28   1      #if OSC_EN_XT   
+                              SAFE_MOD = 0x55;
+                              SAFE_MOD = 0xAA;
+                  CLOCK_CFG |= bOSC_EN_XT;                          //使能外部晶振
+                  CLOCK_CFG &= ~bOSC_EN_INT;                        //关闭内部晶振 
+              #endif  
+  34   1                      SAFE_MOD = 0x55;
+  35   1                      SAFE_MOD = 0xAA;
+  36   1      #if FREQ_SYS == 24000000        
+  37   1                      CLOCK_CFG = CLOCK_CFG & ~ MASK_SYS_CK_SEL | 0x06;  // 24MHz     
+  38   1      #endif  
+  39   1      #if FREQ_SYS == 16000000                
+                              CLOCK_CFG = CLOCK_CFG & ~ MASK_SYS_CK_SEL | 0x05;  // 16MHz     
+              #endif
+  42   1      #if FREQ_SYS == 12000000                
+                              CLOCK_CFG = CLOCK_CFG & ~ MASK_SYS_CK_SEL | 0x04;  // 12MHz
+              #endif  
+  45   1      #if FREQ_SYS == 6000000         
+                              CLOCK_CFG = CLOCK_CFG & ~ MASK_SYS_CK_SEL | 0x03;  // 6MHz      
+              #endif  
+  48   1      #if FREQ_SYS == 3000000 
+                              CLOCK_CFG = CLOCK_CFG & ~ MASK_SYS_CK_SEL | 0x02;  // 3MHz      
+              #endif
+  51   1      #if FREQ_SYS == 750000  
+                              CLOCK_CFG = CLOCK_CFG & ~ MASK_SYS_CK_SEL | 0x01;  // 750KHz
+C51 COMPILER V9.60.0.0   DEBUG                                                             12/06/2020 14:28:35 PAGE 2   
+
+              #endif
+  54   1      #if FREQ_SYS == 187500  
+                              CLOCK_CFG = CLOCK_CFG & ~ MASK_SYS_CK_SEL | 0x00;  // 187.5KHz  
+              #endif
+  57   1                      SAFE_MOD = 0x00;
+  58   1      }
+  59          
+  60          /*******************************************************************************
+  61          * Function Name  : mDelayus(UNIT16 n)
+  62          * Description    : us延时函数
+  63          * Input          : UNIT16 n
+  64          * Output         : None
+  65          * Return         : None
+  66          *******************************************************************************/ 
+  67          void    mDelayuS( UINT16 n )  // 以uS为单位延时
+  68          {
+  69   1      #ifdef  FREQ_SYS
+  70   1      #if             FREQ_SYS <= 6000000
+                              n >>= 2;
+              #endif
+  73   1      #if             FREQ_SYS <= 3000000
+                              n >>= 2;
+              #endif
+  76   1      #if             FREQ_SYS <= 750000
+                              n >>= 4;
+              #endif
+  79   1      #endif
+  80   1              while ( n ) {  // total = 12~13 Fsys cycles, 1uS @Fsys=12MHz
+  81   2                      ++ SAFE_MOD;  // 2 Fsys cycles, for higher Fsys, add operation here
+  82   2      #ifdef  FREQ_SYS
+  83   2      #if             FREQ_SYS >= 14000000
+  84   2                      ++ SAFE_MOD;
+  85   2      #endif
+  86   2      #if             FREQ_SYS >= 16000000
+  87   2                      ++ SAFE_MOD;
+  88   2      #endif
+  89   2      #if             FREQ_SYS >= 18000000
+  90   2                      ++ SAFE_MOD;
+  91   2      #endif
+  92   2      #if             FREQ_SYS >= 20000000
+  93   2                      ++ SAFE_MOD;
+  94   2      #endif
+  95   2      #if             FREQ_SYS >= 22000000
+  96   2                      ++ SAFE_MOD;
+  97   2      #endif
+  98   2      #if             FREQ_SYS >= 24000000
+  99   2                      ++ SAFE_MOD;
+ 100   2      #endif
+ 101   2      #endif
+ 102   2                      -- n;
+ 103   2              }
+ 104   1      }
+ 105          
+ 106          /*******************************************************************************
+ 107          * Function Name  : mDelayms(UNIT16 n)
+ 108          * Description    : ms延时函数
+ 109          * Input          : UNIT16 n
+ 110          * Output         : None
+ 111          * Return         : None
+ 112          *******************************************************************************/
+ 113          void    mDelaymS( UINT16 n )                                                  // 以mS为单位延时
+ 114          {
+C51 COMPILER V9.60.0.0   DEBUG                                                             12/06/2020 14:28:35 PAGE 3   
+
+ 115   1              while ( n ) {
+ 116   2      #ifdef  DELAY_MS_HW
+                              while ( ( TKEY_CTRL & bTKC_IF ) == 0 );
+                              while ( TKEY_CTRL & bTKC_IF );
+              #else
+ 120   2                      mDelayuS( 1000 );
+ 121   2      #endif
+ 122   2                      -- n;
+ 123   2              }
+ 124   1      }                                         
+ 125          
+ 126          /*******************************************************************************
+ 127          * Function Name  : CH552WDTModeSelect(UINT8 mode)
+ 128          * Description    : CH552看门狗模式选择
+ 129          * Input          : UINT8 mode 
+ 130                             0  timer
+ 131                             1  watchDog
+ 132          * Output         : None
+ 133          * Return         : None
+ 134          *******************************************************************************/
+ 135          void CH552WDTModeSelect(UINT8 mode)
+ 136          {
+ 137   1         SAFE_MOD = 0x55;
+ 138   1         SAFE_MOD = 0xaa;                                                             //进入安全模式
+ 139   1         if(mode){
+ 140   2           GLOBAL_CFG |= bWDOG_EN;                                                    //启动看门狗复位
+ 141   2         }
+ 142   1         else GLOBAL_CFG &= ~bWDOG_EN;                                                    //启动看门狗仅仅作为定时器
+ 143   1         SAFE_MOD = 0x00;                                                             //退出安全模式
+ 144   1         WDOG_COUNT = 0;                                                              //看门狗赋初值
+ 145   1      }
+ 146          
+ 147          /*******************************************************************************
+ 148          * Function Name  : CH552WDTFeed(UINT8 tim)
+ 149          * Description    : CH552看门狗定时时间设置
+ 150          * Input          : UINT8 tim 看门狗复位时间设置
+ 151                             00H(6MHz)=2.8s
+ 152                             80H(6MHz)=1.4s
+ 153          * Output         : None
+ 154          * Return         : None
+ 155          *******************************************************************************/
+ 156          void CH552WDTFeed(UINT8 tim)
+ 157          {
+ 158   1         WDOG_COUNT = tim;                                                             //看门狗计数器赋值     
+ 159   1      }
+ 160          
+ 161          // /*******************************************************************************
+ 162          // * Function Name  : CH552SoftReset()
+ 163          // * Description    : CH552软复位
+ 164          // * Input          : None
+ 165          // * Output         : None
+ 166          // * Return         : None
+ 167          // *******************************************************************************/
+ 168          // void CH552SoftReset( )
+ 169          // {
+ 170          //     SAFE_MOD = 0x55;
+ 171          //     SAFE_MOD = 0xAA;
+ 172          //     GLOBAL_CFG       |=bSW_RESET;
+ 173          // }
+ 174          
+ 175          // /*******************************************************************************
+ 176          // * Function Name  : CH552USBDevWakeup()
+C51 COMPILER V9.60.0.0   DEBUG                                                             12/06/2020 14:28:35 PAGE 4   
+
+ 177          // * Description    : CH552设备模式唤醒主机，发送K信号
+ 178          // * Input          : None
+ 179          // * Output         : None
+ 180          // * Return         : None
+ 181          // *******************************************************************************/
+ 182          // void CH552USBDevWakeup( )
+ 183          // {
+ 184          //#ifdef Fullspeed
+ 185          //      UDEV_CTRL |= bUD_LOW_SPEED;
+ 186          //      mDelaymS(2);
+ 187          //      UDEV_CTRL &= ~bUD_LOW_SPEED;            
+ 188          //#else
+ 189          //      UDEV_CTRL &= ~bUD_LOW_SPEED;
+ 190          //      mDelaymS(2);
+ 191          //      UDEV_CTRL |= bUD_LOW_SPEED;     
+ 192          //#endif        
+ 193          // }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     95    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

@@ -1,0 +1,150 @@
+C51 COMPILER V9.60.0.0   GPIO                                                              12/06/2020 14:28:35 PAGE 1   
+
+
+C51 COMPILER V9.60.0.0, COMPILATION OF MODULE GPIO
+OBJECT MODULE PLACED IN .\GPIO.obj
+COMPILER INVOKED BY: D:\keil4\C51\BIN\C51.EXE ..\User\GPIO\GPIO.C LARGE OPTIMIZE(8,SPEED) BROWSE NOAREGS INCDIR(..\Publi
+                    -c;..\User\GPIO;..\User\PWM;..\User\Timer;..\User\ADC;..\User\Compare;..\User\DataFlash;..\User\IAP;..\User\SPI;..\User\T
+                    -ouchKey;..\User\USB\USB_LIB;..\User\IIC;..\User\UART;..\User\Timer;..\User\RZ) DEBUG OBJECTEXTEND PRINT(.\GPIO.lst) OBJE
+                    -CT(.\GPIO.obj)
+
+line level    source
+
+   1          
+   2          /********************************** (C) COPYRIGHT *******************************
+   3          * File Name          : GPIO.C
+   4          * Author             : lfdcn
+   5          * Version            : V1.0
+   6          * Date               : 2020/12/1
+   7          * Description        : CH552 IO …Ë÷√Ω”ø⁄∫Ø ˝∫ÕGPIO÷–∂œ∫Ø ˝  
+   8          *******************************************************************************/
+   9          
+  10          #include "GPIO.H"
+  11          #include <CH552.H>
+  12          
+  13          #pragma  NOAREGS
+  14          
+  15          /*******************************************************************************
+  16          * Function Name  : Port1Cfg()
+  17          * Description    : ∂Àø⁄1≈‰÷√
+  18          * Input          : Mode  0 = ∏°ø’ ‰»Î£¨Œﬁ…œ¿≠
+  19                                   1 = Õ∆ÕÏ ‰»Î ‰≥ˆ
+  20                                   2 = ø™¬© ‰»Î ‰≥ˆ£¨Œﬁ…œ¿≠
+  21                                   3 = ¿‡51ƒ£ Ω£¨ø™¬© ‰»Î ‰≥ˆ£¨”–…œ¿≠£¨ƒ⁄≤øµÁ¬∑ø…“‘º”ÀŸ”…µÕµΩ∏ﬂµƒµÁ∆Ω≈¿…˝         
+  22                             ,UINT8 Pin   (0-7)                                                                                    
+  23          * Output         : None
+  24          * Return         : None
+  25          *******************************************************************************/
+  26          void Port1Cfg(UINT8 Mode,UINT8 Pin)
+  27          {
+  28   1        switch(Mode){
+  29   2          case 0:
+  30   2            P1_MOD_OC = P1_MOD_OC & ~(1<<Pin);
+  31   2            P1_DIR_PU = P1_DIR_PU &   ~(1<<Pin);      
+  32   2            break;
+  33   2          case 1:
+  34   2            P1_MOD_OC = P1_MOD_OC & ~(1<<Pin);
+  35   2            P1_DIR_PU = P1_DIR_PU |   (1<<Pin);                               
+  36   2            break;            
+  37   2          case 2:
+  38   2            P1_MOD_OC = P1_MOD_OC | (1<<Pin);
+  39   2            P1_DIR_PU = P1_DIR_PU &   ~(1<<Pin);                              
+  40   2            break;            
+  41   2          case 3:
+  42   2            P1_MOD_OC = P1_MOD_OC | (1<<Pin);
+  43   2            P1_DIR_PU = P1_DIR_PU |   (1<<Pin);                       
+  44   2            break;
+  45   2          default:
+  46   2            break;                    
+  47   2        }
+  48   1      }
+  49          
+  50          /*******************************************************************************
+  51          * Function Name  : Port3Cfg()
+  52          * Description    : ∂Àø⁄3≈‰÷√
+C51 COMPILER V9.60.0.0   GPIO                                                              12/06/2020 14:28:35 PAGE 2   
+
+  53          * Input          : Mode  0 = ∏°ø’ ‰»Î£¨Œﬁ…œ¿≠
+  54                                   1 = Õ∆ÕÏ ‰»Î ‰≥ˆ
+  55                                   2 = ø™¬© ‰»Î ‰≥ˆ£¨Œﬁ…œ¿≠
+  56                                   3 = ¿‡51ƒ£ Ω£¨ø™¬© ‰»Î ‰≥ˆ£¨”–…œ¿≠£¨ƒ⁄≤øµÁ¬∑ø…“‘º”ÀŸ”…µÕµΩ∏ﬂµƒµÁ∆Ω≈¿…˝         
+  57                             ,UINT8 Pin   (0-7)                                                                                    
+  58          * Output         : None
+  59          * Return         : None
+  60          *******************************************************************************/
+  61          void Port3Cfg(UINT8 Mode,UINT8 Pin)
+  62          {
+  63   1        switch(Mode){
+  64   2          case 0:
+  65   2            P3_MOD_OC = P3_MOD_OC & ~(1<<Pin);
+  66   2            P3_DIR_PU = P3_DIR_PU &   ~(1<<Pin);      
+  67   2            break;
+  68   2          case 1:
+  69   2            P3_MOD_OC = P3_MOD_OC & ~(1<<Pin);
+  70   2            P3_DIR_PU = P3_DIR_PU |   (1<<Pin);                               
+  71   2            break;            
+  72   2          case 2:
+  73   2            P3_MOD_OC = P3_MOD_OC | (1<<Pin);
+  74   2            P3_DIR_PU = P3_DIR_PU &   ~(1<<Pin);                              
+  75   2            break;            
+  76   2          case 3:
+  77   2            P3_MOD_OC = P3_MOD_OC | (1<<Pin);
+  78   2            P3_DIR_PU = P3_DIR_PU |   (1<<Pin);                       
+  79   2            break;
+  80   2          default:
+  81   2            break;                    
+  82   2        }
+  83   1      }
+  84          
+  85          /*******************************************************************************
+  86          * Function Name  : GPIOInterruptCfg()
+  87          * Description    : GPIO÷–∂œ≈‰÷√
+  88          * Input          : None                                                                  
+  89          * Output         : None
+  90          * Return         : None
+  91          *******************************************************************************/
+  92          //void GPIOInterruptCfg()
+  93          //{
+  94          //   GPIO_IE &= ~bIE_IO_EDGE;                                                    //∏ﬂ/µÕµÁ∆Ω¥•∑¢
+  95          ////    GPIO_IE |= bIE_IO_EDGE;                                                  //…œ…˝/œ¬Ωµ¥•∑¢  
+  96          ////    GPIO_IE |= bIE_RXD1_LO;                                                     //RXD0µÕµÁ∆ΩªÚœ¬Ωµ—ÿ¥•
+             -∑¢
+  97          //   GPIO_IE |= bIE_P1_5_LO | bIE_P1_4_LO | bIE_P1_3_LO | bIE_RST_HI;            
+  98          //   //P15\P14\P13µÕµÁ∆Ω¥•∑¢£ªRST∏ﬂµÁ∆Ω¥•∑¢
+  99          ////    GPIO_IE |= bIE_P3_1_LO;                                                     //P31µÕµÁ∆ΩªÚœ¬Ωµ—ÿ¥•∑
+             -¢
+ 100          ////    GPIO_IE |= bIE_RXD0_LO;                                                     //RXD0µÕµÁ∆ΩªÚœ¬Ωµ—ÿ¥•
+             -∑¢        
+ 101          //   IE_GPIO  = 1;                                                               //GPIO÷–∂œø™∆Ù
+ 102          //}
+ 103          
+ 104          //#ifdef GPIO_INTERRUPT
+ 105          ///*******************************************************************************
+ 106          //* Function Name  : GPIOInterrupt(void)
+ 107          //* Description    : GPIO ÷–∂œ∑˛ŒÒ≥Ã–Ú
+ 108          //*******************************************************************************/
+ 109          //void  GPIOInterrupt( void ) interrupt INT_NO_GPIO  using 1                      //GPIO÷–∂œ∑˛ŒÒ≥Ã–Ú, π”√ºƒ
+             -¥Ê∆˜◊È1
+ 110          //{ 
+C51 COMPILER V9.60.0.0   GPIO                                                              12/06/2020 14:28:35 PAGE 3   
+
+ 111          //#ifdef DE_PRINTF
+ 112          //      printf("GPIO_STATUS: %02x\n",(UINT16)(PIN_FUNC&bIO_INT_ACT));             
+ 113          //#endif
+ 114          //}
+ 115          //#endif
+ 116          
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    178    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

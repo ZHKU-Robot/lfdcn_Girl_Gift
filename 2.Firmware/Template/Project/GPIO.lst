@@ -1,10 +1,11 @@
-C51 COMPILER V9.60.0.0   GPIO                                                              11/27/2020 11:04:20 PAGE 1   
+C51 COMPILER V9.60.0.0   GPIO                                                              11/27/2020 11:16:59 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE GPIO
 OBJECT MODULE PLACED IN .\GPIO.obj
 COMPILER INVOKED BY: D:\keil4\C51\BIN\C51.EXE ..\User\GPIO\GPIO.C LARGE OPTIMIZE(8,SPEED) BROWSE NOAREGS INCDIR(..\Publi
-                    -c;..\User\GPIO) DEBUG OBJECTEXTEND PRINT(.\GPIO.lst) OBJECT(.\GPIO.obj)
+                    -c;..\User\GPIO;..\User\PWM;..\User\Timer;..\User\ADC;..\User\Compare;..\User\DataFlash;..\User\IAP;..\User\SPI;..\User\T
+                    -ouchKey;..\User\USB\USB_LIB) DEBUG OBJECTEXTEND PRINT(.\GPIO.lst) OBJECT(.\GPIO.obj)
 
 line level    source
 
@@ -61,9 +62,9 @@ line level    source
   51          
   52          /*******************************************************************************
   53          * Function Name  : Port3Cfg()
-  54          * Description    : 端口3配置
-C51 COMPILER V9.60.0.0   GPIO                                                              11/27/2020 11:04:20 PAGE 2   
+C51 COMPILER V9.60.0.0   GPIO                                                              11/27/2020 11:16:59 PAGE 2   
 
+  54          * Description    : 端口3配置
   55          * Input          : Mode  0 = 浮空输入，无上拉
   56                                   1 = 推挽输入输出
   57                                   2 = 开漏输入输出，无上拉
@@ -125,9 +126,9 @@ line level    source
  110          //*******************************************************************************/
  111          //void  GPIOInterrupt( void ) interrupt INT_NO_GPIO  using 1                      //GPIO中断服务程序,使用寄
              -存器组1
- 112          //{ 
-C51 COMPILER V9.60.0.0   GPIO                                                              11/27/2020 11:04:20 PAGE 3   
+C51 COMPILER V9.60.0.0   GPIO                                                              11/27/2020 11:16:59 PAGE 3   
 
+ 112          //{ 
  113          //#ifdef DE_PRINTF
  114          //      printf("GPIO_STATUS: %02x\n",(UINT16)(PIN_FUNC&bIO_INT_ACT));             
  115          //#endif

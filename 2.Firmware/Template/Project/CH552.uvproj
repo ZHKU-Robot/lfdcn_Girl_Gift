@@ -13,14 +13,14 @@
       <uAC6>0</uAC6>
       <TargetOption>
         <TargetCommonOption>
-          <Device>CH554</Device>
+          <Device>CH551</Device>
           <Vendor>WCH</Vendor>
-          <Cpu>IRAM(0-0xFF) XRAM(0-0x3FF)  IROM(0-0x3FFF) CLOCK(24000000)</Cpu>
+          <Cpu>IRAM(0-0xFF) XRAM(0-0xFF)  IROM(0-0x3FFF) CLOCK(24000000)</Cpu>
           <FlashUtilSpec></FlashUtilSpec>
           <StartupFile>"LIB\STARTUP.A51" ("Standard 8051 Startup Code")</StartupFile>
           <FlashDriverDll></FlashDriverDll>
           <DeviceId>0</DeviceId>
-          <RegisterFile>CH554.H</RegisterFile>
+          <RegisterFile>CH551.H</RegisterFile>
           <MemoryEnv></MemoryEnv>
           <Cmp></Cmp>
           <Asm></Asm>
@@ -46,7 +46,7 @@
             <InvalidFlash>1</InvalidFlash>
           </TargetStatus>
           <OutputDirectory>.\</OutputDirectory>
-          <OutputName>CH554DEMO</OutputName>
+          <OutputName>CH552Template</OutputName>
           <CreateExecutable>1</CreateExecutable>
           <CreateLib>0</CreateLib>
           <CreateHexFile>1</CreateHexFile>
@@ -283,7 +283,7 @@
               <XRA>
                 <Type>0</Type>
                 <StartAddress>0x0</StartAddress>
-                <Size>0x400</Size>
+                <Size>0x100</Size>
               </XRA>
               <XRA512>
                 <Type>0</Type>
@@ -324,7 +324,7 @@
               <MiscControls></MiscControls>
               <Define></Define>
               <Undefine></Undefine>
-              <IncludePath>..\Public;..\User\GPIO</IncludePath>
+              <IncludePath>..\Public;..\User\GPIO;..\User\PWM;..\User\Timer;..\User\ADC;..\User\Compare;..\User\DataFlash;..\User\IAP;..\User\SPI;..\User\TouchKey;..\User\USB\USB_LIB</IncludePath>
             </VariousControls>
           </C51>
           <Ax51>

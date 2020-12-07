@@ -1,0 +1,9 @@
+"main.obj",
+".\Debug.obj",
+".\GPIO.obj",
+".\I2C.obj",
+".\Timer.obj",
+".\UART.obj",
+".\RZ.obj" 
+TO "Girl's_Gift" 
+RAMSIZE(256) 
